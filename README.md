@@ -5,7 +5,7 @@ A modern, animated, and fully responsive redesign of the [Tulas International Sc
 ---
 
 ## 🚀 Live Demo & Links
-- **Live URL:** [Deploying to Vercel...]
+- **Live URL:** [https://tis-home-page-redesign.vercel.app](https://tis-home-page-redesign.vercel.app/)
 - **GitHub Repository:** [https://github.com/KajalDalai-309/TIS-HOME-PAGE-REDESIGN](https://github.com/KajalDalai-309/TIS-HOME-PAGE-REDESIGN)
 - **Original Website:** [tis.edu.in](https://tis.edu.in/)
 
