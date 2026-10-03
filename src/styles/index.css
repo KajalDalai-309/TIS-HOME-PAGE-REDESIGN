@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 248 245 240;
+    --fg: 38 38 38;
+    --muted: 82 82 82;
+    --card: 255 255 255;
+    --line: 38 38 38;
+    --accent: 185 1 36;
+    --tealink: 31 122 114;
+    color-scheme: light;
+  }
+  .dark {
+    --bg: 20 16 18;
+    --fg: 245 240 235;
+    --muted: 196 188 184;
+    --card: 34 27 30;
+    --line: 245 240 235;
+    --accent: 255 122 143;
+    --tealink: 96 186 177;
+    color-scheme: dark;
+  }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-bg font-sans text-fg antialiased; }
+  :focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 3px; }
+  .focus-white :focus-visible { outline-color: #fff; }
+  section[id] { scroll-margin-top: 4.5rem; }
+}
+
+@layer components {
+  .italic-accent { @apply font-serif font-normal normal-case italic tracking-normal; }
+}
+
+/* Marquee + floating orbs (disabled under reduced motion below) */
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes float { 50% { transform: translateY(-14px); } }
+.marquee-track { animation: marquee var(--dur, 40s) linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+/* Theme switch: circular reveal is animated from JS (see useTheme) */
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track, .animate-float { animation: none; }
+}
